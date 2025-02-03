@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma 2</title>
+
+    <style>
+        
+        body {
+            margin: auto;
+            padding: auto;
+            height: auto; /* Asegura que el cuerpo ocupe toda la altura de la pantalla */
+        }
+        
+        /* Estilo del encabezado */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            /* Espacia los elementos */
+            align-items: center;
+            /* Centra verticalmente */
+            padding: 10px 20px;
+            background-color: #ffffff;
+            /* Fondo blanco */
+            border-bottom: 1px solid #e6e6e6;
+            /* Línea inferior */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Sombra sutil */
+        }
+
+        /* Estilo del menú */
+        .menu {
+            display: flex;
+            align-items: center;
+            /* Centra verticalmente */
+            gap: 15px;
+            /* Espaciado entre elementos */
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #4a4a4a;
+            /* Texto gris oscuro */
+            font-weight: 500;
+            /* Fuente semi-negrita */
+            font-size: 16px;
+            /* Tamaño legible */
+            padding: 8px 12px;
+            /* Espaciado interno */
+            border-radius: 5px;
+            /* Bordes redondeados */
+            transition: background-color 0.3s, color 0.3s;
+            /* Transiciones suaves */
+        }
+
+        .menu a.active {
+            background-color: #007acc;
+            /* Fondo azul claro */
+            color: #ffffff;
+            /* Texto blanco */
+        }
+
+        .menu a:hover {
+            background-color: #005f99;
+            /* Fondo más oscuro al pasar el cursor */
+            color: #ffffff;
+            /* Texto blanco */
+        }
+
+        /* Imagen de perfil */
+        #foto-perfil {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            /* Imagen circular */
+            cursor: pointer;
+            border: 2px solid #007acc;
+            /* Borde azul */
+        }
+
+        /* Menú desplegable */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            /* Ajusta según la posición del encabezado */
+            right: 20px;
+            /* Espaciado desde el borde derecho */
+            background-color: #ffffff;
+            /* Fondo blanco */
+            border: 1px solid #e6e6e6;
+            /* Borde gris claro */
+            border-radius: 8px;
+            /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Sombra ligera */
+            z-index: 1000;
+            width: 200px;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #4a4a4a;
+            /* Texto gris oscuro */
+            font-size: 14px;
+            transition: background-color 0.3s;
+            /* Transición suave */
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f5f5f5;
+            /* Fondo gris claro al pasar el cursor */
+            color: #007acc;
+            /* Texto azul */
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        td {
+            width: 190px;
+            height: 33px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        /* Estilo para el mensaje flotante */
+        #floatingMessage {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            font-size: 1.2rem;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+
+        /* Clases para los colores */
+        .j {
+            background-color: black;
+        }
+
+        .o {
+            background-color: red;
+        }
+
+        .n {
+            background-color: blue;
+        }
+
+        .a {
+            background-color: green;
+        }
+
+        .t {
+            background-color: rgb(4, 184, 255);
+        }
+
+        .h {
+            background-color: rgb(247, 135, 7);
+        }
+
+        .f {
+            background-color: aqua;
+        }
+
+        .r {
+            background-color: rgb(0, 255, 85);
+        }
+
+        .i {
+            background-color: #8836e6;
+        }
+
+        .s {
+            background-color: #a8083e;
+        }
+
+        .dos{
+            background-color: #005f99;
+        }
+
+        .cero{
+            background-color: #f15bf1;
+        }
+
+        .tres{
+            background-color: #ff1818;
+        }
+
+        .uno{
+            background-color: #dae723;
+        }
+
+        .siete{
+            background-color: #0875f3;
+        }
+        
+        .corazon1{
+            background-color: red;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- Header y Menu -->
+
+    <div class="header">
+
+        <div class="menu">
+            <a href="Index.html">Inicio</a>
+            <a href="p2.html">Forma 2</a>
+            <a href="p3.html">Forma 3</a>
+            <a href="acercade.html">Mas Informacion</a>
+
+        </div>
+
+
+        <img id="foto-perfil" src="img/foto-Jonathan.jpg" alt="Foto Jonathan">
+    </div>
+
+
+    <!-- Menú desplegable -->
+    <div id="dropdown-menu" class="dropdown-menu">
+        <a href="Index.html">Ver Perfil</a>
+        <a href="#">Configuración</a>
+        <a href="exit.html">Cerrar Sesión</a>
+    </div>
+
+    <script>
+        const profileImage = document.getElementById('foto-perfil');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        profileImage.addEventListener('click', () => {
+            const isVisible = dropdownMenu.style.display === 'block';
+            dropdownMenu.style.display = isVisible ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!dropdownMenu.contains(event.target) && event.target !== profileImage) {
+                dropdownMenu.style.display = 'none';
+            }
+
+
+        });
+
+        const menuLinks = document.querySelectorAll('.menu a');
+
+        const currentPath = window.location.pathname.split('/').pop();
+
+        menuLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+
+    <!-- Tablas -->
+
+    <table>
+        <tr>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- j -->
+            <td></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td></td>
+            <!-- o -->
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- t -->
+            <td></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td></td>
+            <!-- h -->
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+        <tr>
+            <!-- j -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- o -->
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- t -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- h -->
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+        <tr>
+            <!-- j -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- o -->
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- t -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- h -->
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+        <tr>
+            <!-- j -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- o -->
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- t -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- h -->
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+        <tr>
+            <!-- j -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- o -->
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- t -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- h -->
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- j -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- o -->
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- t -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- h -->
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- j -->
+            <td></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td class="j" data-text=" J de Juventud - Siempre muestra energía y entusiasmo en cada paso que da"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- o -->
+            <td></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td class="o" data-text=" O de Optimismo - Su visión positiva ilumina incluso los días más oscuros."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- t -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="t" data-text=" T de Talento - Posee habilidades únicas que lo hacen destacar."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- h -->
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="h"
+                data-text=" H de Humildad - Siempre reconoce el valor de los demás y mantiene los pies en la tierra.">
+            </td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a" data-text=" A de Amabilidad - Su trato cálido deja una impresión duradera en los demás."></td>
+            <td></td>
+            <!-- n -->
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td class="n" data-text=" N de Nobleza - Actúa con honestidad y tiene un corazón bondadoso."></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+
+        <!-- Dejar en blanco -->
+        <tr>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <!-- Apellido -->
+
+        <tr>
+            <!-- f -->
+            <td></td>
+            <td class="f"></td>
+            <td class="f"></td>
+            <td class="f"></td>
+            <td class="f"></td>
+            <td class="f"></td>
+            <td></td>
+            <!-- r -->
+            <td></td>
+            <td class="r"></td>
+            <td class="r"></td>
+            <td class="r"></td>
+            <td class="r"></td>
+            <td class="r"></td>
+            <td></td>
+            <!-- i -->
+            <td></td>
+            <td class="i"></td>
+            <td class="i"></td>
+            <td class="i"></td>
+            <td class="i"></td>
+            <td class="i"></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a"></td>
+            <td class="a"></td>
+            <td class="a"></td>
+            <td class="a"></td>
+            <td class="a"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td ></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td ></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- f -->
+            <td></td>
+            <td class="f"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- r -->
+            <td></td>
+            <td class="r"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="r"></td>
+            <td></td>
+            <!-- i -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="i"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td class="s"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- corazon 1  -->
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <!--  -->
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <!-- corazon 1  -->
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <!--  -->
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- f -->
+            <td></td>
+            <td class="f"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- r -->
+            <td></td>
+            <td class="r"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="r"></td>
+            <td></td>
+            <!-- i -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="i"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td class="s"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <!--  -->
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <!--  -->
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- f -->
+            <td></td>
+            <td class="f"></td>
+            <td class="f"></td>
+            <td class="f"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- r -->
+            <td></td>
+            <td class="r"></td>
+            <td class="r"></td>
+            <td class="r"></td>
+            <td class="r"></td>
+            <td class="r"></td>
+            <td></td>
+            <!-- i -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="i"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a"></td>
+            <td class="a"></td>
+            <td class="a"></td>
+            <td class="a"></td>
+            <td class="a"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <!--  -->
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <td class="corazon1"></td></td>
+            <!--  -->
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- f -->
+            <td></td>
+            <td class="f"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- r -->
+            <td></td>
+            <td class="r"></td>
+            <td></td>
+            <td class="r"></td>
+            <td class=""></td>
+            <td></td>
+            <td></td>
+            <!-- i -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="i"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="s"></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <!--  -->
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <!--  -->
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- f -->
+            <td></td>
+            <td class="f"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- r -->
+            <td></td>
+            <td class="r"></td>
+            <td></td>
+            <td></td>
+            <td class="r"></td>
+            <td></td>
+            <td></td>
+            <!-- i -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="i"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="s"></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <!--  -->
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <!--  -->
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- f -->
+            <td></td>
+            <td class="f"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- r -->
+            <td></td>
+            <td class="r"></td>
+            <td></td>
+            <td></td>
+            <td class=""></td>
+            <td class="r"></td>
+            <td></td>
+            <!-- i -->
+            <td></td>
+            <td class="i"></td>
+            <td class="i"></td>
+            <td class="i"></td>
+            <td class="i"></td>
+            <td class="i"></td>
+            <td></td>
+            <!-- a -->
+            <td></td>
+            <td class="a"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="a"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <!--  -->
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td>
+            <td class="corazon1"></td>
+            <!--  -->
+            <td class="corazon1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <!-- Matricula -->
+
+        <!-- Dejar en blanco -->
+        <tr>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="corazon1"></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <!-- Dejar en blanco -->
+        <tr>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- Dejar en blanco -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- 2 -->
+            <td></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td></td>
+            <!-- 0 -->
+            <td></td>
+            <td class="cero"></td>
+            <td class="cero"></td>
+            <td class="cero"></td>
+            <td class="cero"></td>
+            <td class="cero"></td>
+            <td></td>
+            <!-- 2 -->
+            <td></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td></td>
+            <!-- 3 -->
+            <td></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td></td>
+            <!-- - -->
+            <td></td>
+            <td class=""></td>
+            <td class=""></td>
+            <td class=""></td>
+            <td class=""></td>
+            <td class=""></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 7 -->
+            <td></td>
+            <td class="siete"></td>
+            <td class="siete"></td>
+            <td class="siete"></td>
+            <td class="siete"></td>
+            <td class="siete"></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- 2 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="dos"></td>
+            <td></td>
+            <!-- 0 -->
+            <td></td>
+            <td class="cero"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cero"></td>
+            <td></td>
+            <!-- 2 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="dos"></td>
+            <td></td>
+            <!-- 3 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="tres"></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 7 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="siete"></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- 2 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="dos"></td>
+            <td></td>
+            <!-- 0 -->
+            <td></td>
+            <td class="cero"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cero"></td>
+            <td></td>
+            <!-- 2 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="dos"></td>
+            <td></td>
+            <!-- 3 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="tres"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td class=""></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 7 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="siete"></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- 2 -->
+            <td></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td></td>
+            <!-- 0 -->
+            <td></td>
+            <td class="cero"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cero"></td>
+            <td></td>
+            <!-- 2 -->
+            <td></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td></td>
+            <!-- 3 -->
+            <td></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td class="s"></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 7 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="siete"></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- 2 -->
+            <td></td>
+            <td class="dos"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 0 -->
+            <td></td>
+            <td class="cero" data-text="Cero de 0 animo"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cero" data-text="Cero de 0 animo"></td>
+            <td></td>
+            <!-- 2 -->
+            <td></td>
+            <td class="dos"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 3 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="tres"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 7 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="siete"></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- 2 -->
+            <td></td>
+            <td class="dos"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 0 -->
+            <td></td>
+            <td class="cero"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="cero"></td>
+            <td></td>
+            <!-- 2 -->
+            <td></td>
+            <td class="dos"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 3 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="tres"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class=""></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="uno"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 7 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="siete"></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <!-- 2 -->
+            <td></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td></td>
+            <!-- 0 -->
+            <td></td>
+            <td class="cero"></td>
+            <td class="cero"></td>
+            <td class="cero"></td>
+            <td class="cero"></td>
+            <td class="cero"></td>
+            <td></td>
+            <!-- 2 -->
+            <td></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td class="dos"></td>
+            <td></td>
+            <!-- 3 -->
+            <td></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td class="tres"></td>
+            <td></td>
+            <!-- s -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td></td>
+            <!-- 1 -->
+            <td></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td></td>
+            <!--  -->
+            <td></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td class="uno"></td>
+            <td></td>
+            <!-- 7 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="siete"></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <!-- Contenedor para mostrar el texto -->
+    <div id="output" style="margin-top: 20px; font-size: 18px; font-weight: bold;"></div>
+
+    <!-- Contenedor para el mensaje flotante -->
+    <div id="floatingMessage"></div>
+
+
+    <script>
+        // Selecciona todas las celdas de la tabla
+        const tableCells = document.querySelectorAll('td');
+
+        // Selecciona el contenedor para mostrar el texto
+        /*const output = document.getElementById('output');*/ 
+        const floatingMessage = document.getElementById('floatingMessage');
+
+        // Agrega un evento de clic a cada celda
+        tableCells.forEach(cell => {
+            cell.addEventListener('click', () => {
+                // Obtén el texto del atributo data-text de la celda
+                const text = cell.getAttribute('data-text');
+
+                // Si la celda tiene un texto asociado, muéstralo
+                if (text) {
+                    floatingMessage.textContent = text;
+
+                    // Muestra el mensaje flotante
+                    floatingMessage.textContent = `¡Has hecho clic en: ${text}!`;
+                    floatingMessage.style.display = 'block';
+                    floatingMessage.style.opacity = 1;
+
+                    // Oculta el mensaje flotante después de 3 segundos
+                    setTimeout(() => {
+                        floatingMessage.style.opacity = 0;
+                        setTimeout(() => {
+                            floatingMessage.style.display = 'none';
+                        }, 500);
+                    }, 10000);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

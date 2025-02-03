@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mas Informacion</title>
+
+    <style>
+        /* Estilo del encabezado */
+        .header {
+            display: flex;
+            justify-content: space-between; /* Espacia los elementos */
+            align-items: center; /* Centra verticalmente */
+            padding: 10px 20px;
+            background-color: #ffffff; /* Fondo blanco */
+            border-bottom: 1px solid #e6e6e6; /* Línea inferior */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+    
+        /* Estilo del menú */
+        .menu {
+            display: flex;
+            align-items: center; /* Centra verticalmente */
+            gap: 15px; /* Espaciado entre elementos */
+        }
+    
+        .menu a {
+            text-decoration: none; 
+            color: #4a4a4a; /* Texto gris oscuro */
+            font-weight: 500; /* Fuente semi-negrita */
+            font-size: 16px; /* Tamaño legible */
+            padding: 8px 12px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+        }
+    
+        .menu a.active {
+            background-color: #007acc; /* Fondo azul claro */
+            color: #ffffff; /* Texto blanco */
+        }
+    
+        .menu a:hover {
+            background-color: #005f99; /* Fondo más oscuro al pasar el cursor */
+            color: #ffffff; /* Texto blanco */
+        }
+    
+        /* Imagen de perfil */
+        #foto-perfil {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* Imagen circular */
+            cursor: pointer;
+            border: 2px solid #007acc; /* Borde azul */
+        }
+    
+        /* Menú desplegable */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px; /* Ajusta según la posición del encabezado */
+            right: 20px; /* Espaciado desde el borde derecho */
+            background-color: #ffffff; /* Fondo blanco */
+            border: 1px solid #e6e6e6; /* Borde gris claro */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+            z-index: 1000;
+            width: 200px;
+        }
+    
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #4a4a4a; /* Texto gris oscuro */
+            font-size: 14px;
+            transition: background-color 0.3s; /* Transición suave */
+        }
+    
+        .dropdown-menu a:hover {
+            background-color: #f5f5f5; /* Fondo gris claro al pasar el cursor */
+            color: #007acc; /* Texto azul */
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <!-- Menú con enlaces -->
+        <div class="menu">
+            <a href="Index.html">Inicio</a>
+            <a href="p2.html">Forma 2</a>
+            <a href="p3.html">Forma 3</a>
+            <a href="acercade.html">Mas Informacion</a>
+            <!-- <h1 id="identificador">Mas Informacion</h1> -->
+        </div>
+
+        <!-- Imagen de perfil -->
+        <img id="foto-perfil" src="img/foto-Jonathan.jpg" alt="Foto Jonathan">
+    </div>
+    
+    <!-- Menú desplegable -->
+    <div id="dropdown-menu" class="dropdown-menu">
+        <a href="Index.html">Ver Perfil</a>
+        <a href="#">Configuración</a>
+        <a href="exit.html">Cerrar Sesión</a>
+    </div>
+
+    <iframe width="853" height="480" src="https://www.youtube.com/embed/RAFIywBGccw" title="ESTA es la ADORACION que saca los demonios de tu CASA / HOY seras libre por completo!!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+    <script>
+        const profileImage = document.getElementById('foto-perfil');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        profileImage.addEventListener('click', () => {
+            const isVisible = dropdownMenu.style.display === 'block';
+            dropdownMenu.style.display = isVisible ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!dropdownMenu.contains(event.target) && event.target !== profileImage) {
+                dropdownMenu.style.display = 'none';
+            }
+
+        
+        });
+
+        const menuLinks = document.querySelectorAll('.menu a');
+
+        const currentPath = window.location.pathname.split('/').pop();
+
+        menuLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma 3</title>
+    
+    <style>
+
+        
+        
+        /* Estilo del encabezado */
+        .header {
+            display: flex;
+            justify-content: space-between; /* Espacia los elementos */
+            align-items: center; /* Centra verticalmente */
+            padding: 10px 20px;
+            background-color: #ffffff; /* Fondo blanco */
+            border-bottom: 1px solid #e6e6e6; /* Línea inferior */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+    
+        /* Estilo del menú */
+        .menu {
+            display: flex;
+            align-items: center; /* Centra verticalmente */
+            gap: 15px; /* Espaciado entre elementos */
+        }
+    
+        .menu a {
+            text-decoration: none; 
+            color: #4a4a4a; /* Texto gris oscuro */
+            font-weight: 500; /* Fuente semi-negrita */
+            font-size: 16px; /* Tamaño legible */
+            padding: 8px 12px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+        }
+    
+        .menu a.active {
+            background-color: #007acc; /* Fondo azul claro */
+            color: #ffffff; /* Texto blanco */
+        }
+    
+        .menu a:hover {
+            background-color: #005f99; /* Fondo más oscuro al pasar el cursor */
+            color: #ffffff; /* Texto blanco */
+        }
+    
+        /* Imagen de perfil */
+        #foto-perfil {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%; /* Imagen circular */
+            cursor: pointer;
+            border: 2px solid #007acc; /* Borde azul */
+        }
+    
+        /* Menú desplegable */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            /* Ajusta según la posición del encabezado */
+            right: 20px;
+            /* Espaciado desde el borde derecho */
+            background-color: #ffffff;
+            /* Fondo blanco */
+            border: 1px solid #e6e6e6;
+            /* Borde gris claro */
+            border-radius: 8px;
+            /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Sombra ligera */
+            z-index: 1000;
+            width: 200px;
+        }
+    
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #4a4a4a; /* Texto gris oscuro */
+            font-size: 14px;
+            transition: background-color 0.3s; /* Transición suave */
+        }
+    
+        .dropdown-menu a:hover {
+            background-color: #f5f5f5; /* Fondo gris claro al pasar el cursor */
+            color: #007acc; /* Texto azul */
+        }
+
+        #l11 {
+            width: 120px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 100px; /* Ajusta según lo que necesites */
+            left: 40px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l12 {
+            width: 100px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 168px; /* Ajusta según lo que necesites */
+            left: 50px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l13 {
+            width: 50px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 230px; /* Ajusta según lo que necesites */
+            left: 65px; /* Ajusta según lo que necesites */
+            
+        }
+        
+        #l21 {
+            width: 120px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 100px; /* Ajusta según lo que necesites */
+            left: 199px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l22 {
+            width: 120px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 235px; /* Ajusta según lo que necesites */
+            left: 199px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l23 {
+            width: 95px;
+            height: 31px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 166.5px; /* Ajusta según lo que necesites */
+            left: 168px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+
+        #l24 {
+            width: 95px;
+            height: 31px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 166.5px; /* Ajusta según lo que necesites */
+            left: 255px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+            
+        }
+
+        
+        #l31 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 182.5px; /* Ajusta según lo que necesites */
+            left: 310px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l32 {
+            width: 85px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 99px; /* Ajusta según lo que necesites */
+            left: 363px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l33 {
+            width: 99px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 168px; /* Ajusta según lo que necesites */
+            left: 384px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg)
+        }
+
+        #l34 {
+            width: 85px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 236px; /* Ajusta según lo que necesites */
+            left: 419px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l35 {
+            width: 132px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 152.5px; /* Ajusta según lo que necesites */
+            left: 423px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+        
+        #l41 {
+            width: 166px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 169.5px; /* Ajusta según lo que necesites */
+            left: 490px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l42 {
+            width: 64px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 101px; /* Ajusta según lo que necesites */
+            left: 590px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l43 {
+            width: 166px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 169.5px; /* Ajusta según lo que necesites */
+            left: 590px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l44 {
+            width: 64px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 171px; /* Ajusta según lo que necesites */
+            left: 590px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l51 {
+            width: 120px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 102px; /* Ajusta según lo que necesites */
+            left: 730px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l52 {
+            width: 140px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 190px; /* Ajusta según lo que necesites */
+            left: 722px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l61 {
+            width: 64px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 169px; /* Ajusta según lo que necesites */
+            left: 890px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l62 {
+            width: 166px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 169.5px; /* Ajusta según lo que necesites */
+            left: 820px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l63 {
+            width: 166px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 171px; /* Ajusta según lo que necesites */
+            left:889px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l71 {
+            width: 166px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 169.5px; /* Ajusta según lo que necesites */
+            left: 960px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l72 {
+            width: 64px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 101px; /* Ajusta según lo que necesites */
+            left: 1061px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l73 {
+            width: 166px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 169.5px; /* Ajusta según lo que necesites */
+            left: 1060px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l74 {
+            width: 64px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 171px; /* Ajusta según lo que necesites */
+            left: 1061px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l81 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 182.5px; /* Ajusta según lo que necesites */
+            left: 1130px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l82 {
+            width: 85px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 99px; /* Ajusta según lo que necesites */
+            left: 1183px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l83 {
+            width: 99px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 168px; /* Ajusta según lo que necesites */
+            left: 1204px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg)
+        }
+
+        #l84 {
+            width: 85px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 236px; /* Ajusta según lo que necesites */
+            left: 1239px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l85 {
+            width: 132px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 152.5px; /* Ajusta según lo que necesites */
+            left: 1243px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l91 {
+            width: 132px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 360.5px; /* Ajusta según lo que necesites */
+            left: 15px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l92 {
+            width: 85px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 309.4px; /* Ajusta según lo que necesites */
+            left: 99px; /* Ajusta según lo que necesites */
+        }
+
+        #l93 {
+            width: 55px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 365px; /* Ajusta según lo que necesites */
+            left: 99px; /* Ajusta según lo que necesites */
+        }
+
+        #l101 {
+            width: 132px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 360.5px; /* Ajusta según lo que necesites */
+            left: 179px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l102{
+            width: 59px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 362.5px; /* Ajusta según lo que necesites */
+            left: 262px;
+        }
+        #l103{
+            width: 80px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 389.5px; /* Ajusta según lo que necesites */
+            left: 269px;
+            transform: rotate(90deg);
+        }
+
+        #l104{
+            width: 60px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 309.4px; /* Ajusta según lo que necesites */
+            left: 262px;
+            transform: rotate(0deg);
+        }
+
+        #l105{
+            width: 80px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 334.4px; /* Ajusta según lo que necesites */
+            left: 298.9px;
+            transform: rotate(90deg);
+            border-radius: 100px 100px 0 0;
+        }
+
+        #l111 {
+            width: 68px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 362.5px; /* Ajusta según lo que necesites */
+            left: 395px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l112 {
+            width: 100px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 309.4px; /* Ajusta según lo que necesites */
+            left: 380px; /* Ajusta según lo que necesites */
+        }
+
+        #l113 {
+            width: 100px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 415px; /* Ajusta según lo que necesites */
+            left: 380px; /* Ajusta según lo que necesites */
+        }
+
+        #l121 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 363px; /* Ajusta según lo que necesites */
+            left: 459px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l122 {
+            width: 45px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 363px; /* Ajusta según lo que necesites */
+            left: 545px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l123 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 363px; /* Ajusta según lo que necesites */
+            left: 539px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l124 {
+            width: 45px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 309px; /* Ajusta según lo que necesites */
+            left: 545px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l131 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 309px; /* Ajusta según lo que necesites */
+            left: 650px; /* Ajusta según lo que necesites */
+        }
+
+        #l132 {
+            width: 15px;
+            height: 20px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 339px; /* Ajusta según lo que necesites */
+            left: 653px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l133 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 361px; /* Ajusta según lo que necesites */
+            left: 650px;
+        }
+
+        #l134 {
+            width: 15px;
+            height: 20px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 392px; /* Ajusta según lo que necesites */
+            left: 768px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l135 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 415px; 
+            left: 650px; 
+        }
+
+        #l141 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 480px; /* Ajusta según lo que necesites */
+            left: 66px; /* Ajusta según lo que necesites */
+        }
+
+        #l142 {
+            width: 15px;
+            height: 20px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 510px; /* Ajusta según lo que necesites */
+            left: 184.2px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l143 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 531px; /* Ajusta según lo que necesites */
+            left: 66px;
+        }
+
+        #l144 {
+            width: 15px;
+            height: 20px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 561px; /* Ajusta según lo que necesites */
+            left: 68.5px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l145 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 581px; 
+            left: 66px; 
+        }
+
+        #l151 {
+            width: 120px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 480px; /* Ajusta según lo que necesites */
+            left: 230px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l152 {
+            width: 120px;
+            height: 30px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 581px; /* Ajusta según lo que necesites */
+            left: 230px; /* Ajusta según lo que necesites */
+            
+        }
+
+        #l153 {
+            width: 62px;
+            height: 31px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 530px; /* Ajusta según lo que necesites */
+            left: 215px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+
+        #l154 {
+            width: 62px;
+            height: 31px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 530px; /* Ajusta según lo que necesites */
+            left: 303px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+            
+        }
+
+        #l161 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 480px; /* Ajusta según lo que necesites */
+            left: 378px; /* Ajusta según lo que necesites */
+        }
+
+        #l162 {
+            width: 15px;
+            height: 20px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 510px; /* Ajusta según lo que necesites */
+            left: 496px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l163 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 531px; /* Ajusta según lo que necesites */
+            left: 378px;
+        }
+
+        #l164 {
+            width: 15px;
+            height: 20px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 561px; /* Ajusta según lo que necesites */
+            left: 381px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l165 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 581px; 
+            left: 378px; 
+        }
+
+        #l171 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 480px; /* Ajusta según lo que necesites */
+            left: 548px; /* Ajusta según lo que necesites */
+        }
+
+        #l172 {
+            width: 15px;
+            height: 20px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 510px; /* Ajusta según lo que necesites */
+            left: 666px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l173 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 531px; /* Ajusta según lo que necesites */
+            left: 548px;
+        }
+
+        #l174 {
+            width: 15px;
+            height: 20px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 561px; /* Ajusta según lo que necesites */
+            left: 666px; /* Ajusta según lo que necesites */
+            transform: rotate(90deg);
+        }
+
+        #l175 {
+            width: 136px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 581px; 
+            left: 548px; 
+        }
+
+        #l181 {
+            width: 86px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 531px; /* Ajusta según lo que necesites */
+            left: 726px;
+        }
+
+        #l191 {
+            width: 56px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 480px; /* Ajusta según lo que necesites */
+            left: 856.1px;
+        }
+        #l192 {
+            width: 66px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 531px; /* Ajusta según lo que necesites */
+            left: 864px;
+            transform: rotate(90deg);
+        }
+        #l193 {
+            width: 86px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 581px; /* Ajusta según lo que necesites */
+            left: 856px;
+        }
+        #l201 {
+            width: 56px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 480px; /* Ajusta según lo que necesites */
+            left: 986.1px;
+        }
+        #l202 {
+            width: 66px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 531px; /* Ajusta según lo que necesites */
+            left: 994px;
+            transform: rotate(90deg);
+        }
+        #l203 {
+            width: 86px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 581px; /* Ajusta según lo que necesites */
+            left: 986px;
+        }
+        #l211 {
+            width: 56px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 480px; /* Ajusta según lo que necesites */
+            left: 1116.1px;
+        }
+        #l212 {
+            width: 66px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 531px; /* Ajusta según lo que necesites */
+            left: 1124px;
+            transform: rotate(90deg);
+        }
+        #l213 {
+            width: 86px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 581px; /* Ajusta según lo que necesites */
+            left: 1116px;
+        }
+        #l221 {
+            width: 86px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 480px; /* Ajusta según lo que necesites */
+            left: 1216.1px;
+        }
+        #l222 {
+            width: 96px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 546px; /* Ajusta según lo que necesites */
+            left: 1239px;
+            transform: rotate(90deg);
+        }
+        #l223 {
+            width: 86px;
+            height: 29px;
+            border: solid 3px black;
+            background-color: red;
+            position: absolute;
+            top: 531px; /* Ajusta según lo que necesites */
+            left: 1240px;
+        }
+        
+    </style>
+
+    
+
+</head>
+<body>
+    
+    <div class="header">
+        <!-- Menú con enlaces -->
+        <div class="menu">
+            <a href="Index.html">Inicio</a>
+            <a href="p2.html">Forma 2</a>
+            <a href="p3.html">Forma 3</a>
+            <a href="acercade.html">Mas Informacion</a>
+            <!-- <h1 id="identificador">Mas Informacion</h1> -->
+        </div>
+
+        <!-- Imagen de perfil -->
+        <img id="foto-perfil" src="img/foto-Jonathan.jpg" alt="Foto Jonathan">
+    </div>
+    
+    <!-- Menú desplegable -->
+    <div id="dropdown-menu" class="dropdown-menu">
+        <a href="Index.html">Ver Perfil</a>
+        <a href="#">Configuración</a>
+        <a href="exit.html">Cerrar Sesión</a>
+    </div>
+    
+    <div id="l11"></div>
+    <div id="l12"></div>
+    <div id="l13"></div>
+    <div id="l21"></div>
+    <div id="l22"></div>
+    <div id="l23"></div>
+    <div id="l24"></div>
+    <div id="l31"></div>
+    <div id="l32"></div>
+    <div id="l33"></div>
+    <div id="l34"></div>
+    <div id="l35"></div>
+    <div id="l41"></div>
+    <div id="l42"></div>
+    <div id="l43"></div>
+    <div id="l44"></div>
+    <div id="l51"></div>
+    <div id="l52"></div>
+    <div id="l61"></div>
+    <div id="l62"></div>
+    <div id="l63"></div>
+    <div id="l71"></div>
+    <div id="l72"></div>
+    <div id="l73"></div>
+    <div id="l74"></div>
+    <div id="l81"></div>
+    <div id="l82"></div>
+    <div id="l83"></div>
+    <div id="l84"></div>
+    <div id="l85"></div>
+    <div id="l91"></div>
+    <div id="l92"></div>
+    <div id="l93"></div>
+    <div id="l101"></div>
+    <div id="l102"></div>
+    <div id="l103"></div>
+    <div id="l104"></div>
+    <div id="l105"></div>
+    <div id="l106"></div>
+    <div id="l111"></div>
+    <div id="l112"></div>
+    <div id="l113"></div>
+    <div id="l121"></div>
+    <div id="l122"></div>
+    <div id="l123"></div>
+    <div id="l124"></div>
+    <div id="l131"></div>
+    <div id="l132"></div>
+    <div id="l133"></div>
+    <div id="l134"></div>
+    <div id="l135"></div>
+    
+
+    <!-- Matricula -->
+
+    <!-- 2 -->
+    <div id="l141"></div>
+    <div id="l142"></div>
+    <div id="l143"></div>
+    <div id="l144"></div>
+    <div id="l145"></div>
+    <!-- 0 -->
+    <div id="l151"></div>
+    <div id="l152"></div>
+    <div id="l153"></div>
+    <div id="l154"></div>
+    <!-- 2 -->
+    <div id="l161"></div>
+    <div id="l162"></div>
+    <div id="l163"></div>
+    <div id="l164"></div>
+    <div id="l165"></div>
+    <!-- 3 -->
+    <div id="l171"></div>
+    <div id="l172"></div>
+    <div id="l173"></div>
+    <div id="l174"></div>
+    <div id="l175"></div>
+    <!-- - -->
+     <div id="l181"></div>
+    <!-- 1 -->
+    <div id="l191"></div>
+    <div id="l192"></div>
+    <div id="l193"></div>
+    <!-- 1 -->
+    <div id="l201"></div>
+    <div id="l202"></div>
+    <div id="l203"></div>
+    <!-- 1 -->
+    <div id="l211"></div>
+    <div id="l212"></div>
+    <div id="l213"></div>
+    <!-- 7 -->
+    <div id="l221"></div>
+    <div id="l222"></div>
+    <div id="l223"></div>
+
+    <script>
+        const profileImage = document.getElementById('foto-perfil');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        profileImage.addEventListener('click', () => {
+            const isVisible = dropdownMenu.style.display === 'block';
+            dropdownMenu.style.display = isVisible ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!dropdownMenu.contains(event.target) && event.target !== profileImage) {
+                dropdownMenu.style.display = 'none';
+            }
+
+        
+        });
+
+        const menuLinks = document.querySelectorAll('.menu a');
+
+        const currentPath = window.location.pathname.split('/').pop();
+
+        menuLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
